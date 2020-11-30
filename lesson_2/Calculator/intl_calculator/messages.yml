@@ -1,0 +1,179 @@
+en:
+  messages:
+    welcome: 'Welcome to Calculator!'
+    greeting: 'Hi'
+    repeat_welcome: 'Back again'
+    exit: 'Thanks for using the Calculator'
+    signoff: 'Goodbye!'
+  responses:
+    repeat_short: 'y'
+    repeat_long: 'yes'
+    exit_short: 'n'
+    exit_long: 'no'
+  requests:
+    lang: 'Which language do you want?'
+    name: 'What is your name?'
+    repeat: "Do you want to perform another calculation? \n ('y' or 'yes' to calculate again, 'n' or 'no' to exit)"
+    first_number: 'What is your first number?'
+    second_number: 'What is your second number?'
+    operator: "What operation do you want to perform? \n '1' or 'add' \n '2' or 'subtract' \n '3' or 'multiply' \n '4' or 'divide'"
+  invalid_inputs:
+    lang: 'Enter a valid language'
+    name: 'Make sure to use a valid name with characters.'
+    repeat: "Please enter 'y' or 'yes' to calculate again, or 'n' or 'no' to exit"
+    integer: 'Invalid number input. Please try again'
+    operation: "Invalid operation input. Please try again with: \n `1`, `2`, `3` or `4` \n\t or \n 'add', 'subtract', 'multiply', or 'divide"
+    zero_divisor: 'indivisible by zero'
+  operations:
+    order:
+      '1': 'add'
+      '2': 'subtract'
+      '3': 'multiply'
+      '4': 'divide'
+    add:
+      name: 'add'
+      msg: 'plus'
+    subtract:
+      name: 'subtract'
+      msg: 'subtracted from'
+    multiply:
+      name: 'multiply'
+      msg: 'multiplied by'
+    divide:
+      name: 'divide'
+      msg: 'divided by'
+
+es:
+  messages:
+    welcome: '¡Bienvenido a Calculadora!'
+    greeting: 'Hola'
+    repeat_welcome: 'Volver de nuevo'
+    exit: 'Gracias por usar la calculadora'
+    signoff: '¡Adiós!'
+  responses:
+    repeat_short: 's'
+    repeat_long: 'si'
+    exit_short: 'n'
+    exit_long: 'no'
+  requests:
+    lang: '¿Qué idioma quieres?'
+    name: '¿Cuál es tu nombre?'
+    repeat: "¿Quiere realizar otro cálculo? \n ('s' o 'sí' para calcular de nuevo, 'n' o 'no' para salir)"
+    first_number: '¿Cuál es tu primer número?'
+    second_number: '¿Cuál es tu segundo número?'
+    operator: "¿Qué operación desea realizar? \n '1' o 'sumar' \n '2' o 'restar' \n '3' o 'multiplicar' \n '4' o 'dividir'"
+  invalid_inputs:
+    lang: 'Ingrese un idioma válido'
+    name: 'Asegúrese de usar un nombre válido con caracteres.'
+    repeat: "Ingrese 'y' o 'sí' para calcular nuevamente, o 'n' o 'no' para salir"
+    integer: 'Entrada de número no válida. Inténtalo de nuevo'
+    operation: "Entrada de operación no válida. Vuelva a intentarlo con: \n '1', '2', '3' o '4' \n\t o \n 'sumar', 'restar', 'multiplicar' o ' dividir"
+    zero_divisor: 'indivisible por cero'
+  operations:
+    order:
+      '1': 'agregar'
+      '2': 'restar'
+      '3': 'multiplicar'
+      '4': 'dividir'
+    add:
+      name: 'agregar'
+      msg: 'más'
+    subtract:
+      name: 'restar'
+      msg: 'restado de'
+    multiply:
+      name: 'multiplicar'
+      msg: 'multiplicado por'
+    divide:
+      name: 'dividir'
+      msg: 'dividido por'
+
+fn:
+  messages:
+    welcome: "Bienvenue dans Calculator!"
+    greeting: "Salut"
+    repeat_welcome: 'De retour'
+    exit: "Merci d'utiliser la calculatrice"
+    signoff: "Au revoir!"
+  responses:
+    repeat_short: 'o'
+    repeat_long: 'oui'
+    exit_short: 'n'
+    exit_long: 'non'
+  requests:
+    lang: 'Quelle langue voulez-vous?'
+    name: "Quel est votre nom?"
+    repeat: "Voulez-vous effectuer un autre calcul? \n ('o' ou 'oui' pour calculer à nouveau, 'n' ou 'non' pour quitter ')"
+    first_number: "Quel est votre premier numéro?"
+    second_number: "Quel est votre deuxième numéro?"
+    operator: "Quelle opération voulez-vous effectuer? \n '1' ou 'ajouter' \n '2' ou 'soustraire' \n '3' ou 'multiplier' \n '4' ou 'diviser'"
+  invalid_inputs:
+    lang: 'Entrez une langue valide'
+    name: "Assurez-vous d'utiliser un nom valide avec des caractères."
+    repeat: "Veuillez entrer 'y' ou 'oui' pour calculer à nouveau, ou 'n' ou 'non' pour quitter"
+    integer: 'Entrée de numéro non valide. Veuillez réessayer'
+    operation: "Entrée d'opération non valide. Veuillez réessayer avec: \n '1', '2', '3' ou '4' \n\t ou \n 'ajouter', 'soustraire', 'multiplier' ou 'diviser'"
+    zero_divisor: 'indivisible par zéro'
+  operations:
+    order:
+      '1': 'ajouter'
+      '2': 'soustraire'
+      '3': 'multiplier'
+      '4': 'diviser'
+    add:
+      name: 'ajouter'
+      msg: 'plus'
+    subtract:
+      name: 'soustraire'
+      msg: 'soustrait de'
+    multiply:
+      name: 'multiplier'
+      msg: 'multiplié par'
+    divide:
+      name: 'diviser'
+      msg: 'divisé par'
+
+gr:
+  messages:
+    welcome: 'Willkommen bei Calculator!'
+    greeting: 'Hallo'
+    repeat_welcome: 'Wieder zurück'
+    exit: 'Danke, dass du den Rechner benutzt hast'
+    signoff: "Auf Wiedersehen!"
+  responses:
+    repeat_short: 'j'
+    repeat_long: 'ja'
+    exit_short: 'n'
+    exit_long: 'nein'
+  requests:
+    lang: 'Welche Sprache willst du?'
+    name: "Wie ist Ihr Name?"
+    repeat: "Möchten Sie eine weitere Berechnung durchführen? \n ('j' oder 'ja', um erneut zu berechnen, 'n' oder 'nein', um zu beenden ')"
+    first_number: 'Was ist deine erste Nummer?'
+    second_number: 'Was ist deine zweite Nummer?'
+    operator: "Welche Operation möchten Sie ausführen? \n '1' oder 'add' \n '2' oder 'subtrahieren' \n '3' oder 'multiplizieren' \n '4' oder 'teilen'"
+  invalid_inputs:
+    lang: 'Geben Sie eine gültige Sprache ein'
+    name: 'Stellen Sie sicher, dass Sie einen gültigen Namen mit Zeichen verwenden.'
+    repeat: "Bitte geben Sie 'j' oder 'ja' ein, um erneut zu berechnen, oder 'n' oder 'nein', um zu beenden '"
+    integer: 'Ungültige Zahleneingabe. Bitte versuche es erneut'
+    operation: "Ungültige Operationseingabe. Bitte versuchen Sie es erneut mit: \n '1', '2', '3' oder '4' \n\t oder \n 'Addieren', 'Subtrahieren', 'Multiplizieren' oder 'Teilen'"
+    zero_divisor: 'durch Null unteilbar'
+  operations:
+    order:
+      '1': 'hinzufügen'
+      '2': 'subtrahieren'
+      '3': 'multiplizieren'
+      '4': 'teilen'
+    add:
+      name: 'hinzufügen'
+      msg: 'plus'
+    subtract:
+      name: 'subtrahieren'
+      msg: 'subtrahiert von'
+    multiply:
+      name: 'multiplizieren'
+      msg: 'multipliziert mit'
+    divide:
+      name: 'teilen'
+      msg: 'geteilt durch'
