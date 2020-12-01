@@ -1,0 +1,23 @@
+en:
+  '1': 'add'
+  '2': 'subtract'
+  '3': 'multiply'
+  '4': 'divide'
+
+es:
+  '1': 'agregar'
+  '2': 'restar'
+  '3': 'multiplicar'
+  '4': 'dividir'
+
+fn:
+  '1': 'ajouter'
+  '2': 'soustraire'
+  '3': 'multiplier'
+  '4': 'diviser'
+
+gr:
+  '1': 'hinzufügen'
+  '2': 'subtrahieren'
+  '3': 'multiplizieren'
+  '4': 'teilen'

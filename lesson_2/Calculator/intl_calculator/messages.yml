@@ -6,12 +6,12 @@ en:
     exit: 'Thanks for using the Calculator'
     signoff: 'Goodbye!'
   responses:
-    repeat_short: 'y'
-    repeat_long: 'yes'
-    exit_short: 'n'
-    exit_long: 'no'
+    affirmative_short: 'y'
+    affirmative_long: 'yes'
+    negative_short: 'n'
+    negative_long: 'no'
   requests:
-    lang: 'Which language do you want?'
+    lang: 'Language is set to English, do you want to update the language?'
     name: 'What is your name?'
     repeat: "Do you want to perform another calculation? \n ('y' or 'yes' to calculate again, 'n' or 'no' to exit)"
     first_number: 'What is your first number?'
@@ -23,13 +23,8 @@ en:
     repeat: "Please enter 'y' or 'yes' to calculate again, or 'n' or 'no' to exit"
     integer: 'Invalid number input. Please try again'
     operation: "Invalid operation input. Please try again with: \n `1`, `2`, `3` or `4` \n\t or \n 'add', 'subtract', 'multiply', or 'divide"
-    zero_divisor: 'indivisible by zero'
+    zero_divisor: 'is indivisible by zero'
   operations:
-    order:
-      '1': 'add'
-      '2': 'subtract'
-      '3': 'multiply'
-      '4': 'divide'
     add:
       name: 'add'
       msg: 'plus'
@@ -51,10 +46,10 @@ es:
     exit: 'Gracias por usar la calculadora'
     signoff: '¡Adiós!'
   responses:
-    repeat_short: 's'
-    repeat_long: 'si'
-    exit_short: 'n'
-    exit_long: 'no'
+    affirmative_short: 's'
+    affirmative_long: 'si'
+    negative_short: 'n'
+    negative_long: 'no'
   requests:
     lang: '¿Qué idioma quieres?'
     name: '¿Cuál es tu nombre?'
@@ -68,13 +63,8 @@ es:
     repeat: "Ingrese 'y' o 'sí' para calcular nuevamente, o 'n' o 'no' para salir"
     integer: 'Entrada de número no válida. Inténtalo de nuevo'
     operation: "Entrada de operación no válida. Vuelva a intentarlo con: \n '1', '2', '3' o '4' \n\t o \n 'sumar', 'restar', 'multiplicar' o ' dividir"
-    zero_divisor: 'indivisible por cero'
+    zero_divisor: 'es indivisible por cero'
   operations:
-    order:
-      '1': 'agregar'
-      '2': 'restar'
-      '3': 'multiplicar'
-      '4': 'dividir'
     add:
       name: 'agregar'
       msg: 'más'
@@ -96,10 +86,10 @@ fn:
     exit: "Merci d'utiliser la calculatrice"
     signoff: "Au revoir!"
   responses:
-    repeat_short: 'o'
-    repeat_long: 'oui'
-    exit_short: 'n'
-    exit_long: 'non'
+    affirmative_short: 'o'
+    affirmative_long: 'oui'
+    negative_short: 'n'
+    negative_long: 'non'
   requests:
     lang: 'Quelle langue voulez-vous?'
     name: "Quel est votre nom?"
@@ -113,13 +103,8 @@ fn:
     repeat: "Veuillez entrer 'y' ou 'oui' pour calculer à nouveau, ou 'n' ou 'non' pour quitter"
     integer: 'Entrée de numéro non valide. Veuillez réessayer'
     operation: "Entrée d'opération non valide. Veuillez réessayer avec: \n '1', '2', '3' ou '4' \n\t ou \n 'ajouter', 'soustraire', 'multiplier' ou 'diviser'"
-    zero_divisor: 'indivisible par zéro'
+    zero_divisor: 'est indivisible par zéro'
   operations:
-    order:
-      '1': 'ajouter'
-      '2': 'soustraire'
-      '3': 'multiplier'
-      '4': 'diviser'
     add:
       name: 'ajouter'
       msg: 'plus'
@@ -141,10 +126,10 @@ gr:
     exit: 'Danke, dass du den Rechner benutzt hast'
     signoff: "Auf Wiedersehen!"
   responses:
-    repeat_short: 'j'
-    repeat_long: 'ja'
-    exit_short: 'n'
-    exit_long: 'nein'
+    affirmative_short: 'j'
+    affirmative_long: 'ja'
+    negative_short: 'n'
+    negative_long: 'nein'
   requests:
     lang: 'Welche Sprache willst du?'
     name: "Wie ist Ihr Name?"
@@ -158,13 +143,8 @@ gr:
     repeat: "Bitte geben Sie 'j' oder 'ja' ein, um erneut zu berechnen, oder 'n' oder 'nein', um zu beenden '"
     integer: 'Ungültige Zahleneingabe. Bitte versuche es erneut'
     operation: "Ungültige Operationseingabe. Bitte versuchen Sie es erneut mit: \n '1', '2', '3' oder '4' \n\t oder \n 'Addieren', 'Subtrahieren', 'Multiplizieren' oder 'Teilen'"
-    zero_divisor: 'durch Null unteilbar'
+    zero_divisor: 'ist durch Null unteilbar'
   operations:
-    order:
-      '1': 'hinzufügen'
-      '2': 'subtrahieren'
-      '3': 'multiplizieren'
-      '4': 'teilen'
     add:
       name: 'hinzufügen'
       msg: 'plus'

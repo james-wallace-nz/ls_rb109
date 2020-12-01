@@ -1,8 +1,10 @@
 require 'yaml'
+require 'pry'
 
 # ------------------- Imports --------------------------------------------------
 
 LANGS = YAML.load_file('languages.yml')
+OPS = YAML.load_file('operations.yml')
 MSGS = YAML.load_file('messages.yml')
 
 # ------------------- Methods --------------------------------------------------
@@ -39,8 +41,25 @@ def valid_float?(input)
 end
 
 def valid_operation?(input)
-  !!(MSGS[LANG]['operations']['order'].keys.include?(input) ||
-    MSGS[LANG]['operations']['order'].values.include?(input.downcase))
+  !!(OPS[LANG].keys.include?(input) ||
+    OPS[LANG].values.include?(input.downcase))
+end
+
+def update_lang?
+  prompt MSGS[LANG]['requests']['lang']
+  update = ''
+  loop do
+    update = gets.chomp.downcase
+    break if valid_exit?(repeat)
+
+    prompt MSGS[LANG]['invalid_inputs']['repeat']
+  end
+
+  if AFFIRMATIVE.include?(repeat)
+    true
+  elsif NEGATIVE.include?(repeat)
+    false
+  end
 end
 
 def request_lang
@@ -56,7 +75,6 @@ def request_lang
 end
 
 def normalise_lang
-  clear_screen
   lang = request_lang
   if LANGS.values.include?(lang.capitalize)
     LANGS.key(lang.capitalize)
@@ -98,23 +116,11 @@ end
 
 def normalise_operation(msg)
   input = request_operation(msg)
-  if MSGS[LANG]['operations']['order'].keys.include?(input)
-    MSGS[LANG]['operations']['order'][input]
+  if OPS[LANG].keys.include?(input)
+    OPS[LANG][input]
   else
     input
   end
-end
-
-def add(first, second)
-  first + second
-end
-
-def subtract(first, second)
-  first - second
-end
-
-def multiply(first, second)
-  first * second
 end
 
 def divide(first, second)
@@ -129,9 +135,9 @@ end
 
 def calculate_result(first, second, operation)
   case operation
-  when MSGS[LANG]['operations']['add']['name'] then add(first, second)
-  when MSGS[LANG]['operations']['subtract']['name'] then subtract(first, second)
-  when MSGS[LANG]['operations']['multiply']['name'] then multiply(first, second)
+  when MSGS[LANG]['operations']['add']['name'] then first + second
+  when MSGS[LANG]['operations']['subtract']['name'] then first - second
+  when MSGS[LANG]['operations']['multiply']['name'] then first * second
   when MSGS[LANG]['operations']['divide']['name'] then divide(first, second)
   end
 end
@@ -144,7 +150,9 @@ def display_result(first, second, calc_result, operation)
 end
 
 def format_thousands(input)
-  if input > 1000
+  if input == MSGS[LANG]['invalid_inputs']['zero_divisor'] || input < 1000
+    input
+  else
     left, right = input.to_s.split('.')
 
     left = left.chars
@@ -155,15 +163,16 @@ def format_thousands(input)
 
     left = increments.join(',')
     right.nil? ? left : left << '.' << right
-  else
-    input
   end
 end
 
 def result_message(first, second, calc_result, operation)
-  operation_number = MSGS[LANG]['operations']['order'].key(operation)
-  english_operation = MSGS['en']['operations']['order'][operation_number]
-  if operation == MSGS[LANG]['operations']['order']['2']
+  operation_number = OPS[LANG].key(operation)
+  english_operation = OPS['en'][operation_number]
+  if calc_result == MSGS[LANG]['invalid_inputs']['zero_divisor']
+    "#{first} #{MSGS[LANG]['operations'][english_operation]['msg']} " \
+    "#{second} #{calc_result}"
+  elsif operation == OPS[LANG]['2']
     "#{second} #{MSGS[LANG]['operations'][english_operation]['msg']} " \
     "#{first} equals #{calc_result}"
   else
@@ -182,31 +191,38 @@ def play_again?
     prompt MSGS[LANG]['invalid_inputs']['repeat']
   end
 
-  if REPEAT.include?(repeat)
+  if AFFIRMATIVE.include?(repeat)
     true
-  elsif EXIT.include?(repeat)
+  elsif NEGATIVE.include?(repeat)
     false
   end
 end
 
 def valid_exit?(input)
-  REPEAT.include?(input) || EXIT.include?(input)
+  AFFIRMATIVE.include?(input) || NEGATIVE.include?(input)
 end
 
 # ------------------- Constants ------------------------------------------------
 
+# lang = 'en'
+
+clear_screen
 LANG = normalise_lang
 
-REPEAT = [MSGS[LANG]['responses']['repeat_short'],
-          MSGS[LANG]['responses']['repeat_long']]
+AFFIRMATIVE = [MSGS[LANG]['responses']['affirmative_short'],
+          MSGS[LANG]['responses']['affirmative_long']]
 
-EXIT = [MSGS[LANG]['responses']['exit_short'],
-        MSGS[LANG]['responses']['exit_long']]
+NEGATIVE = [MSGS[LANG]['responses']['negative_short'],
+        MSGS[LANG]['responses']['negative_long']]
 
 # ------------------- Program --------------------------------------------------
 
+# clear_screen
+# lang = normalise_lang
+
 clear_screen
 name = request_name
+
 clear_screen
 prompt "#{MSGS[LANG]['messages']['greeting']}, #{name}!"
 
@@ -226,3 +242,14 @@ end
 clear_screen
 prompt "#{MSGS[LANG]['messages']['exit']}, #{name}. " \
         "#{MSGS[LANG]['messages']['signoff']}"
+
+# changing LANG to lang default value = 'en' then re-assign with request method
+
+# change prompt
+  # def prompt(lang, msg_type, msg)
+  #   puts "=> #{MSGS[lang][msg_type][msg]}"
+  # end
+
+# update play_again?
+  # AFFIRMATIVE.include?(repeat)
+
