@@ -11,20 +11,21 @@ en:
     negative_short: 'n'
     negative_long: 'no'
   requests:
-    lang: 'Language is set to English, do you want to update the language?'
+    lang: "Language is set to English, do you want to update the language? \n   ('y' or 'yes' to calculate again, 'n' or 'no' to exit)"
+    choices: 'Select language:'
     name: 'What is your name?'
     repeat: "Do you want to perform another calculation? \n ('y' or 'yes' to calculate again, 'n' or 'no' to exit)"
-    first_number: 'What is your first number?'
-    second_number: 'What is your second number?'
-    operator: "What operation do you want to perform? \n '1' or 'add' \n '2' or 'subtract' \n '3' or 'multiply' \n '4' or 'divide'"
+    first_num: 'What is your first number?'
+    second_num: 'What is your second number?'
+    operator: "What operation do you want to perform? \n   '1' or 'add' \n   '2' or 'subtract' \n   '3' or 'multiply' \n   '4' or 'divide'"
   invalid_inputs:
     lang: 'Enter a valid language'
     name: 'Make sure to use a valid name with characters.'
     repeat: "Please enter 'y' or 'yes' to calculate again, or 'n' or 'no' to exit"
-    integer: 'Invalid number input. Please try again'
-    operation: "Invalid operation input. Please try again with: \n `1`, `2`, `3` or `4` \n\t or \n 'add', 'subtract', 'multiply', or 'divide"
+    number: 'Invalid number input. Please try again'
+    operation: "Invalid operation input. Please try again with: \n   `1`, `2`, `3` or `4` \n\t   or \n   'add', 'subtract', 'multiply', or 'divide"
     zero_divisor: 'is indivisible by zero'
-  operations:
+  ops:
     add:
       name: 'add'
       msg: 'plus'
@@ -53,18 +54,18 @@ es:
   requests:
     lang: '¿Qué idioma quieres?'
     name: '¿Cuál es tu nombre?'
-    repeat: "¿Quiere realizar otro cálculo? \n ('s' o 'sí' para calcular de nuevo, 'n' o 'no' para salir)"
-    first_number: '¿Cuál es tu primer número?'
-    second_number: '¿Cuál es tu segundo número?'
-    operator: "¿Qué operación desea realizar? \n '1' o 'sumar' \n '2' o 'restar' \n '3' o 'multiplicar' \n '4' o 'dividir'"
+    repeat: "¿Quiere realizar otro cálculo? \n   ('s' o 'sí' para calcular de nuevo, 'n' o 'no' para salir)"
+    first_num: '¿Cuál es tu primer número?'
+    second_num: '¿Cuál es tu segundo número?'
+    operator: "¿Qué operación desea realizar? \n   '1' o 'sumar' \n   '2' o 'restar' \n   '3' o 'multiplicar' \n   '4' o 'dividir'"
   invalid_inputs:
     lang: 'Ingrese un idioma válido'
     name: 'Asegúrese de usar un nombre válido con caracteres.'
-    repeat: "Ingrese 'y' o 'sí' para calcular nuevamente, o 'n' o 'no' para salir"
-    integer: 'Entrada de número no válida. Inténtalo de nuevo'
-    operation: "Entrada de operación no válida. Vuelva a intentarlo con: \n '1', '2', '3' o '4' \n\t o \n 'sumar', 'restar', 'multiplicar' o ' dividir"
+    repeat: "Ingrese 's' o 'sí' para calcular nuevamente, o 'n' o 'no' para salir"
+    number: 'Entrada de número no válida. Inténtalo de nuevo'
+    operation: "Entrada de operación no válida. Vuelva a intentarlo con: \n   '1', '2', '3' o '4' \n\t   o \n   'sumar', 'restar', 'multiplicar' o ' dividir"
     zero_divisor: 'es indivisible por cero'
-  operations:
+  ops:
     add:
       name: 'agregar'
       msg: 'más'
@@ -93,18 +94,18 @@ fn:
   requests:
     lang: 'Quelle langue voulez-vous?'
     name: "Quel est votre nom?"
-    repeat: "Voulez-vous effectuer un autre calcul? \n ('o' ou 'oui' pour calculer à nouveau, 'n' ou 'non' pour quitter ')"
-    first_number: "Quel est votre premier numéro?"
-    second_number: "Quel est votre deuxième numéro?"
-    operator: "Quelle opération voulez-vous effectuer? \n '1' ou 'ajouter' \n '2' ou 'soustraire' \n '3' ou 'multiplier' \n '4' ou 'diviser'"
+    repeat: "Voulez-vous effectuer un autre calcul? \n   ('o' ou 'oui' pour calculer à nouveau, 'n' ou 'non' pour quitter ')"
+    first_num: "Quel est votre premier numéro?"
+    second_num: "Quel est votre deuxième numéro?"
+    operator: "Quelle opération voulez-vous effectuer? \n   '1' ou 'ajouter' \n   '2' ou 'soustraire' \n   '3' ou 'multiplier' \n   '4' ou 'diviser'"
   invalid_inputs:
     lang: 'Entrez une langue valide'
     name: "Assurez-vous d'utiliser un nom valide avec des caractères."
-    repeat: "Veuillez entrer 'y' ou 'oui' pour calculer à nouveau, ou 'n' ou 'non' pour quitter"
-    integer: 'Entrée de numéro non valide. Veuillez réessayer'
-    operation: "Entrée d'opération non valide. Veuillez réessayer avec: \n '1', '2', '3' ou '4' \n\t ou \n 'ajouter', 'soustraire', 'multiplier' ou 'diviser'"
+    repeat: "Veuillez entrer 'o' ou 'oui' pour calculer à nouveau, ou 'n' ou 'non' pour quitter"
+    number: 'Entrée de numéro non valide. Veuillez réessayer'
+    operation: "Entrée d'opération non valide. Veuillez réessayer avec: \n   '1', '2', '3' ou '4' \n\t   ou \n   'ajouter', 'soustraire', 'multiplier' ou 'diviser'"
     zero_divisor: 'est indivisible par zéro'
-  operations:
+  ops:
     add:
       name: 'ajouter'
       msg: 'plus'
@@ -133,18 +134,18 @@ gr:
   requests:
     lang: 'Welche Sprache willst du?'
     name: "Wie ist Ihr Name?"
-    repeat: "Möchten Sie eine weitere Berechnung durchführen? \n ('j' oder 'ja', um erneut zu berechnen, 'n' oder 'nein', um zu beenden ')"
-    first_number: 'Was ist deine erste Nummer?'
-    second_number: 'Was ist deine zweite Nummer?'
-    operator: "Welche Operation möchten Sie ausführen? \n '1' oder 'add' \n '2' oder 'subtrahieren' \n '3' oder 'multiplizieren' \n '4' oder 'teilen'"
+    repeat: "Möchten Sie eine weitere Berechnung durchführen? \n   ('j' oder 'ja', um erneut zu berechnen, 'n' oder 'nein', um zu beenden ')"
+    first_num: 'Was ist deine erste Nummer?'
+    second_num: 'Was ist deine zweite Nummer?'
+    operator: "Welche Operation möchten Sie ausführen? \n   '1' oder 'add' \n   '2' oder 'subtrahieren' \n   '3' oder 'multiplizieren' \n   '4' oder 'teilen'"
   invalid_inputs:
     lang: 'Geben Sie eine gültige Sprache ein'
     name: 'Stellen Sie sicher, dass Sie einen gültigen Namen mit Zeichen verwenden.'
     repeat: "Bitte geben Sie 'j' oder 'ja' ein, um erneut zu berechnen, oder 'n' oder 'nein', um zu beenden '"
-    integer: 'Ungültige Zahleneingabe. Bitte versuche es erneut'
-    operation: "Ungültige Operationseingabe. Bitte versuchen Sie es erneut mit: \n '1', '2', '3' oder '4' \n\t oder \n 'Addieren', 'Subtrahieren', 'Multiplizieren' oder 'Teilen'"
+    number: 'Ungültige Zahleneingabe. Bitte versuche es erneut'
+    operation: "Ungültige Operationseingabe. Bitte versuchen Sie es erneut mit: \n   '1', '2', '3' oder '4' \n\t   oder \n   'Addieren', 'Subtrahieren', 'Multiplizieren' oder 'Teilen'"
     zero_divisor: 'ist durch Null unteilbar'
-  operations:
+  ops:
     add:
       name: 'hinzufügen'
       msg: 'plus'
