@@ -8,17 +8,33 @@ end
 
 greeting
 
+# greeting => nil
+# Ruby knows there is a variable named greeting but it hasn't been assigned a value
+
+# If you initialise a local vairable within an if block, even if that block doesn't get executed, the local variable is initialized to nil
+
+# Solution:
+
+# greeting is nil here, and no "undefined method or local variable" exception is thrown. Typically, when you reference an uninitialized variable, Ruby will raise an exception, stating that it’s undefined. However, when you initialize a local variable within an if block, even if that if block doesn’t get executed, the local variable is initialized to nil.
+
 
 # 2
 
 # What is the result of the last line in the code below?
 
 greetings = { a: 'hi' }
-informal_greeting = greetings[:a]
-informal_greeting << ' there'
+informal_greeting = greetings[:a]     # 'hi'
+informal_greeting << ' there'         # 'hi there'
 
 puts informal_greeting  #  => "hi there"
-puts greetings
+puts greetings          # { a: 'hi there' }
+
+# Solution:
+
+# The output is {:a=>"hi there"}. The reason is because informal_greeting is a reference to the original object. The line informal_greeting << ' there' was using the String#<< method, which modifies the object that called it. This means that the original object was changed, thereby impacting the value in greetings. If instead of modifying the original object, we wanted to only modify informal_greeting but not greetings, there are a couple of options:
+
+# we could initialize informal_greeting with a reference to a new object containing the same value by informal_greeting = greetings[:a].clone.
+# we can use string concatenation, informal_greeting = informal_greeting + ' there', which returns a new String object instead of modifying the original object.
 
 
 # 3
@@ -48,6 +64,11 @@ puts "one is: #{one}"
 puts "two is: #{two}"
 puts "three is: #{three}"
 
+# 'one'
+# 'two'
+# 'three'
+# The parameters, one, two, and three are reassigned within the mess_with_vars method definition. This doesn't not mutate or reasisgn the value of the variables in the outer scope
+
 
 # B)
 
@@ -66,6 +87,11 @@ mess_with_vars(one, two, three)
 puts "one is: #{one}"
 puts "two is: #{two}"
 puts "three is: #{three}"
+
+# 'one'
+# 'two'
+# 'three'
+# The parameters, one, two, and three are reassigned within the mess_with_vars method definition. This doesn't not mutate or reasisgn the value of the variables in the outer scope
 
 
 # C)
@@ -86,22 +112,65 @@ puts "one is: #{one}"
 puts "two is: #{two}"
 puts "three is: #{three}"
 
+# 'two'
+# 'three'
+# 'one'
+
+# gsub! mutates the caller, which means that the original string characters 'one', 'two', and 'three' are replaced in place by the new characters 'two', 'three', 'one'.
+
+
 
 # 4
 
 # Ben was tasked to write a simple ruby method to determine if an input string is an IP address representing dot-separated numbers. e.g. "10.4.5.11". He is not familiar with regular expressions. Alyssa supplied Ben with a method called is_an_ip_number? that determines if a string is a numeric string between 0 and 255 as required for IP numbers and asked Ben to use it.
 
-def dot_separated_ip_address?(input_string)
-  dot_separated_words = input_string.split(".")
-  while dot_separated_words.size > 0 do
-    word = dot_separated_words.pop
-    break unless is_an_ip_number?(word)
-  end
-  return true
-end
+# def dot_separated_ip_address?(input_string)
+#   dot_separated_words = input_string.split(".")
+#   while dot_separated_words.size > 0 do
+#     word = dot_separated_words.pop
+#     break unless is_an_ip_number?(word)
+#   end
+#   return true
+# end
 
 # Alyssa reviewed Ben's code and says "It's a good start, but you missed a few things. You're not returning a false condition, and you're not handling the case that there are more or fewer than 4 components to the IP address (e.g. "4.5.5" or "1.2.3.4.5" should be invalid)."
 
-Help Ben fix his code.
+# Help Ben fix his code.
+
+def dot_separated_ip_address?(input_string)
+  dot_separated_words = input_string.split(".")
+  return false unless dot_separated_words.size == 4
+  while dot_separated_words.size > 0 do
+    word = dot_separated_words.pop
+    return false unless is_an_ip_number?(word)
+  end
+  true
+end
+
+def is_an_ip_number?(input)
+  input.to_i >= 0 && input.to_i <= 255
+end
+
+puts dot_separated_ip_address?('10.4.5.11')
+puts dot_separated_ip_address?('4.5.5')
+puts dot_separated_ip_address?('1.2.3.4.5')
 
 
+# Solution:
+# There are several ways to fix this. To determine if there are exactly 4 dot-separated "words" in the string, you can simply add a check for dot_separated_words.size after splitting the string.
+
+# The other error in Ben's code is that instead of returning false upon encountering a non-numeric component, he used break to break out of the while loop. Once he breaks, control falls through to the return true statement. He can fix this by performing return false instead of break.
+
+# def dot_separated_ip_address?(input_string)
+#   dot_separated_words = input_string.split(".")
+#   return false unless dot_separated_words.size == 4
+
+#   while dot_separated_words.size > 0 do
+#     word = dot_separated_words.pop
+#     return false unless is_an_ip_number?(word)
+#   end
+
+#   true
+# end
+
+# Note: Ben's original return true on the last line of the method can be shortened to just true. This is because Ruby returns the result of the last evaluated expression.
