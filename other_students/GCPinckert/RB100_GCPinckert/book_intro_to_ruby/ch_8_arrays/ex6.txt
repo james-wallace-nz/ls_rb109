@@ -1,0 +1,24 @@
+Exercise 6:
+The following code results in the error message below:
+
+names = ['bob', 'joe', 'susan', 'margaret']
+names['margaret'] = 'jody'
+
+TypeError: no implicit conversion of String into Integer
+  from (irb):2:in `[]='
+  from (irb):2
+  from /Users/username/.rvm/rubies/ruby-2.5.3/bin/irb:12:in `<main>'
+
+What is the problem and how can it be fixed?
+
+The problem is that we are using the actual value of the array
+element to try and access that element when we should be
+using the index number for the array element 'margaret'. Ruby throws
+the error because it expects an integer (the index number) not a 
+string (the element itself).
+
+By replacing 'margaret' with the correct index number (3), the code
+should run as expects:
+
+names = ['bob', 'joe', 'susan', 'margaret']
+names[3] = 'jody'

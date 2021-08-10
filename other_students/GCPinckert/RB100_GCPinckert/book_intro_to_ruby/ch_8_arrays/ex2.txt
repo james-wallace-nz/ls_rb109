@@ -1,0 +1,20 @@
+Exercise 2:
+What will the following programs return? What is the value of arr
+after each?
+
+1. arr = ["b", "a"]
+   arr = arr.product(Array(1..3))
+   arr.first.delete(arr.first.last)
+
+  The program will return the integer 1: which is the last element
+  in the first sub-array in variable "arr". The value of arr will
+  be: [["b"], ["b", 2], ["b", 3], ["a", 1], ["a", 2], ["a", 3]]
+
+2. arr = ["b", "a"]
+   arr = arr.product([Array(1..3)])
+   arr.first.delete(arr.first.last)
+
+   The program will return the array [1, 2, 3], which is the last 
+   element in the first sub-array in the variable "arr". After the 
+   delete method is called the value of arr will be: 
+   [["b"], ["a", [1, 2, 3]]]

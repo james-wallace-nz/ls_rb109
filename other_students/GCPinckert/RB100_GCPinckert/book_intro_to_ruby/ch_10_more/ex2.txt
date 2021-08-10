@@ -1,0 +1,13 @@
+Exercise 2:
+What will the following program print to the screen? What will it
+return?
+
+def execute(&block)
+  block # note: block is never activated with the .call method.
+end
+
+execute { puts "Hello from inside the execute method!" }
+
+This program will not print anything to the screen because the block
+is never run with the .call method. Though there is no output, a proc 
+object is returned. 

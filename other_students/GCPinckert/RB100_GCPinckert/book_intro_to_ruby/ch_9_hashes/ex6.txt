@@ -1,0 +1,11 @@
+Exercise 6:
+Given the following code, what's the difference between the two
+hashes that were created?
+
+x = "hi there"
+my_hash = {x: "some value"}
+my_hash2 = {x => "some value"}
+
+In my_hash the key assigned to "some value" is a symbol data type 
+called :x. In my_hash2 the key assigned to "some value" is variable
+x, which has the string value "hi there". 

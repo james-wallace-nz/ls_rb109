@@ -1,0 +1,11 @@
+Exercise 6:
+
+Write down whether the following expressions run true or false 
+or raise an error. 
+
+(32 * 4) >= "129" #=> error, cannot compare two data types with <,>. 
+847 == '847' #=> false
+'847' < '846' #=> false
+'847' > '846' #=> true
+'847' > '8478' #=> false
+'847' < '8478' #=> true

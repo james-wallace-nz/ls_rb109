@@ -1,0 +1,18 @@
+Exercise 5:
+Why does the following code give the folllowing error when run?
+
+def execute(block)
+  block.call
+end
+
+execute { puts "Hello from inside the execute method!" }
+
+block.rb1:in `execute': wrong number of arguments (0 for 1) (ArgumentError)
+from test.rb:5:in `<main>'
+
+The error message indicates there is a problem with the number of 
+arguments when the execute method is called. This is because when the 
+method is defined, the & operator is left off the "block" parameter to
+indicate a block of code. Therefore, the program expects a different 
+object as argument, which is does not find when execute is called and
+passed a block. 

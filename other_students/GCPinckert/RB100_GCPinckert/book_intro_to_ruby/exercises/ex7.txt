@@ -1,0 +1,15 @@
+Exercise 7:
+What's the major difference between an Array and a Hash?
+
+An array consists of an ordered list, which can be accessed via index
+number. A hash consists of a list of key/value pairs, which do not
+have any inherent order. In a hash, values are accessed via the key
+usually using bracket notation.
+
+array = [0, 1, 2, 3]
+# access via index 
+array [1] #=> 1
+
+hash = { one: 1, two: 2, three: 3 }
+# acces via key
+hash[:one] # => 1

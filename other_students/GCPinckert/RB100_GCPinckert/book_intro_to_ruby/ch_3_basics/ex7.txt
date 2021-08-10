@@ -1,0 +1,12 @@
+# Error message:
+SyntaxError: (irb):2: syntax error, unexpected ')', expecting '}'
+  from /usr/local/rvm/rubies/ruby-2.5.3/bin/irb:16:in `<main>'
+
+The error message indicates that while using irb, the user
+accidentally typed a ')' where a '}' was expected. Aka, there
+was an issue with the *syntax* of the code, not the *logic*. 
+
+EDIT: (from solution)
+
+May also indicate a bracket that doesn't have a closing bracket
+following it. 
