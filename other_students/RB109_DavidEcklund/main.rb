@@ -1,1 +1,0 @@
-puts File.read('test.txt')
