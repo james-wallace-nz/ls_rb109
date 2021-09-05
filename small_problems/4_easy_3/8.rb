@@ -1,18 +1,22 @@
-# Write another method that returns true if the string passed as an argument is a palindrome, false otherwise. This time, however, your method should be case-insensitive, and it should ignore all non-alphanumeric characters. If you wish, you may simplify things by calling the palindrome? method you wrote in the previous exercise.
+# Write a method that returns true if the string passed as an argument is a palindrome, false otherwise. A palindrome reads the same forward and backward. For this exercise, case matters as does punctuation and spaces.
 
 # input: string
 # output: boolean - palindrome
 
+# palindrome reads the same forward and backward
+# case sensitive
+# include punctuation and spaces
+
 # algorithim:
+# conditional that argument is equal to reversed argument
 
-def real_palindrome?(string)
 
+def palindrome?(string)
+  string == string.reverse
 end
 
 # Examples:
-real_palindrome?('madam') == true
-real_palindrome?('Madam') == true           # (case does not matter)
-real_palindrome?("Madam, I'm Adam") == true # (only alphanumerics matter)
-real_palindrome?('356653') == true
-real_palindrome?('356a653') == true
-real_palindrome?('123ab321') == false
+p palindrome?('madam') == true
+p palindrome?('Madam') == false          # (case matters)
+p palindrome?("madam i'm adam") == false # (all characters matter)
+p palindrome?('356653') == true

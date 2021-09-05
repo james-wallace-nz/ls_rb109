@@ -1,17 +1,25 @@
-# Write a method that returns true if its integer argument is palindromic, false otherwise. A palindromic number reads the same forwards and backwards.
+# Write another method that returns true if the string passed as an argument is a palindrome, false otherwise. This time, however, your method should be case-insensitive, and it should ignore all non-alphanumeric characters. If you wish, you may simplify things by calling the palindrome? method you wrote in the previous exercise.
 
-# input: integer
-# output: boolean - digits are palindrome
+# input: string
+# output: boolean - palindrome
+
+# palindrome is case insensitive and ignore non-alphanumeric characters
 
 # algorithim:
+# - downcase `string` argument and remove non-alphanumeric characters
+# - is resulting string equal to itself with `reverse` called on it
 
-
-def palindromic_number(integer)
-
+def real_palindrome?(string)
+  # clean_string = string.downcase.delete("^a-z0-9")
+  clean_string = string.downcase.gsub(/[^a-z0-9]/, '')
+  puts clean_string
+  clean_string == clean_string.reverse
 end
 
 # Examples:
-palindromic_number?(34543) == true
-palindromic_number?(123210) == false
-palindromic_number?(22) == true
-palindromic_number?(5) == true
+p real_palindrome?('madam') == true
+p real_palindrome?('Madam') == true           # (case does not matter)
+p real_palindrome?("Madam, I'm Adam") == true # (only alphanumerics matter)
+p real_palindrome?('356653') == true
+p real_palindrome?('356a653') == true
+p real_palindrome?('123ab321') == false
