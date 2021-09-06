@@ -6,12 +6,54 @@
 
 =begin
 
+PROBLEM
 
+convert integer to string equivalent with sign
+
+input: integer
+output: string equivalent
+
+DATA STRUCTURES
+
+integer
+string
+array
+
+ALGORITHM
+- determine string equivalent
+
+
+
+CODE
 
 =end
 
-def signed_integer_to_string(integer)
+DIGITS = %w(0 1 2 3 4 5 6 7 8 9)
 
+def integer_to_string(number)
+  result = ''
+
+  loop do
+    number, remainder = number.divmod(10)
+    result.prepend(DIGITS[remainder])
+    break if number == 0
+  end
+
+  result
+end
+
+def signed_integer_to_string(number)
+  if number > 0
+    sign = '+'
+  elsif number < 0
+    sign = '-'
+  else
+    sign = ''
+  end
+
+  number = number.abs
+  string = integer_to_string(number)
+  string.prepend(sign)
 end
 
 # Examples
