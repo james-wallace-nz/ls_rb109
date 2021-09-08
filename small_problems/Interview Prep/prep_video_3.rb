@@ -32,7 +32,7 @@ Array
 
 ALGORITHM
 - initialize `digits` and assign integer converted to digits with `to_s` method and converted to array with `chars` method
-- initialize `permutations` array variable and assign the return value of `permutation` method called on `digits`
+- initialize `permutations` array variable and assign the return value of `permutation` method called on `digits` and converted to an array
 - join string elements in `permutation` sub-arrays then convert to integers
 
 - sort the `permutation` array smallest to largest
@@ -51,7 +51,7 @@ def next_bigger_num(int)
   permutations = permutations.map { |digits| digits.join.to_i }
   permutations.sort!
   int_index = permutations.index(int)
-  unless permutations[int_index + 1] == int || permutations[int_index + 1].nil?
+  unless permutations.max == int || permutations[int_index + 1].nil?
     permutations[int_index + 1]
   else
     -1
@@ -65,3 +65,4 @@ p next_bigger_num(2017) == 2071
 p next_bigger_num(111) == -1
 p next_bigger_num(531) == -1
 p next_bigger_num(123456789) == 123456798
+p next_bigger_num(2071) == 2107
