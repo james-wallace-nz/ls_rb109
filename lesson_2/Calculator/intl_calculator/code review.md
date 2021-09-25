@@ -33,7 +33,7 @@ Otherwise, your validations are great, and I like the fact that you have impleme
 
 ### Source code
 
-I would not keep language in a constant as this causes you to sometimes use `MSGS["en"]` and sometimes `MSGS[LANG]`. Better way is to just assign to a variable `lang` default value `"en"`` and then reassign it after the user chooses the language.
+I would not keep language in a constant as this causes you to sometimes use `MSGS["en"]` and sometimes `MSGS[LANG]`. Better way is to just assign to a variable `lang` default value `"en"` and then reassign it after the user chooses the language.
 
 I also wouldn't keep valid inputs in a messages file. That file should continue messages that you would output to the screen.
 
